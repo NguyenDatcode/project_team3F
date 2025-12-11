@@ -1,0 +1,22 @@
+[
+  {
+    "tongDoanhThu": 150.5,
+    "soHopDongSapHetHan": 3,
+    "thang": 1,
+    "nam": 2025,
+    "tinhTrangThuePhong": {
+      "dangThue": 30,
+      "trong": 10
+    }
+  },
+  {
+    "tongDoanhThu": 165.2,
+    "soHopDongSapHetHan": 4,
+    "thang": 2,
+    "nam": 2025,
+    "tinhTrangThuePhong": {
+      "dangThue": 32,
+      "trong": 8
+    }
+  }
+]

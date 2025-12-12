@@ -1,0 +1,66 @@
+[
+  {
+    "maDichVu": "DV01",
+    "tenDichVu": "Phí Internet tốc độ cao",
+    "donGia": 150.0,
+    "donViTinh": "tháng",
+    "trangThai": "Đang áp dụng",
+    "loaiTinhPhi": "Cố định/Căn hộ"
+  },
+  {
+    "maDichVu": "DV02",
+    "tenDichVu": "Phí vệ sinh hàng tháng",
+    "donGia": 50.0,
+    "donViTinh": "tháng",
+    "trangThai": "Đang áp dụng",
+    "loaiTinhPhi": "Cố định/Căn hộ"
+  },
+  {
+    "maDichVu": "DV03",
+    "tenDichVu": "Phí gửi xe máy",
+    "donGia": 100.0,
+    "donViTinh": "lần/xe",
+    "trangThai": "Hết hạn",
+    "loaiTinhPhi": "Cố định/Người"
+  },
+  {
+    "maDichVu": "DV04",
+    "tenDichVu": "Phí điện",
+    "donGia": 3500,
+    "donViTinh": "kWh",
+    "trangThai": "Hết hạn",
+    "loaiTinhPhi": "Theo công tơ"
+  },
+  {
+    "maDichVu": "DV05",
+    "tenDichVu": "Phí nước",
+    "donGia": 15000,
+    "donViTinh": "m3",
+    "trangThai": "Đang áp dụng",
+    "loaiTinhPhi": "Theo công tơ"
+  },
+  {
+    "maDichVu": "DV06",
+    "tenDichVu": "Phí bảo trì chung cư",
+    "donGia": 200.0,
+    "donViTinh": "tháng",
+    "trangThai": "Hết hạn",
+    "loaiTinhPhi": "Cố định/Căn hộ"
+  },
+  {
+    "maDichVu": "DV07",
+    "tenDichVu": "Phí quản lý tài sản",
+    "donGia": 0,
+    "donViTinh": "tháng",
+    "trangThai": "Đang áp dụng",
+    "loaiTinhPhi": "Miễn phí"
+  },
+  {
+    "maDichVu": "DV08",
+    "tenDichVu": "Phí cáp truyền hình",
+    "donGia": 80.0,
+    "donViTinh": "tháng",
+    "trangThai": "Đang áp dụng",
+    "loaiTinhPhi": "Cố định/Căn hộ"
+  }
+]

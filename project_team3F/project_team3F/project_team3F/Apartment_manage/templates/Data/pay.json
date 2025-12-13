@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Phí quản lý tháng 01/2025",
+    "amount": 1500000,
+    "due_date": "2025-02-05"
+  },
+  {
+    "id": 2,
+    "title": "Điện nước tháng 01/2025",
+    "amount": 750000,
+    "due_date": "2025-02-03"
+  },
+  {
+    "id": 3,
+    "title": "Phí gửi xe tháng 01/2025",
+    "amount": 300000,
+    "due_date": "2025-02-07"
+  },
+  {
+    "id": 4,
+    "title": "Internet/TV cáp tháng 01/2025",
+    "amount": 400000,
+    "due_date": "2025-02-04"
+  },
+  {
+    "id": 5,
+    "title": "Phí bảo trì tiện ích chung",
+    "amount": 500000,
+    "due_date": "2025-02-10"
+  }
+]

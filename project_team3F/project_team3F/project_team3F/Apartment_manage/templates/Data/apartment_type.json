@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "tenLoai": "Studio",
+    "dienTich": 28,
+    "giaCoBan": 5500000,
+    "moTa": "Loại nhỏ nhất, phù hợp sinh viên/người độc thân."
+  },
+  {
+    "id": 2,
+    "tenLoai": "1 Phòng ngủ",
+    "dienTich": 45,
+    "giaCoBan": 8000000,
+    "moTa": "Thiết kế hiện đại, có ban công, phù hợp cặp đôi."
+  },
+  {
+    "id": 3,
+    "tenLoai": "2 Phòng ngủ",
+    "dienTich": 70,
+    "giaCoBan": 12000000,
+    "moTa": "Rộng rãi, phù hợp gia đình 3-4 người."
+  },
+  {
+    "id": 4,
+    "tenLoai": "Penthouse",
+    "dienTich": 120,
+    "giaCoBan": 30000000,
+    "moTa": "Căn hộ cao cấp, sang trọng, tầng cao, có sân thượng."
+  },
+  {
+    "id": 5,
+    "tenLoai": "Studio Mini",
+    "dienTich": 20,
+    "giaCoBan": 4500000,
+    "moTa": "Loại cực nhỏ, chỉ bao gồm phòng ngủ và khu bếp cơ bản."
+  },
+  {
+    "id": 6,
+    "tenLoai": "1PN+1 (Khu đa năng)",
+    "dienTich": 55,
+    "giaCoBan": 9500000,
+    "moTa": "Có thêm khu vực làm việc/học tập riêng biệt."
+  },
+  {
+    "id": 7,
+    "tenLoai": "2PN Duplex",
+    "dienTich": 85,
+    "giaCoBan": 18000000,
+    "moTa": "Căn hộ thông tầng, thiết kế độc đáo, trần cao."
+  },
+  {
+    "id": 8,
+    "tenLoai": "3 Phòng ngủ",
+    "dienTich": 95,
+    "giaCoBan": 16000000,
+    "moTa": "Căn hộ lớn, có thể chứa gia đình đông người hoặc nhóm bạn."
+  },
+  {
+    "id": 9,
+    "tenLoai": "Shophouse tầng trệt",
+    "dienTich": 100,
+    "giaCoBan": 25000000,
+    "moTa": "Căn hộ thương mại ở tầng dưới, có thể kết hợp kinh doanh."
+  },
+  {
+    "id": 10,
+    "tenLoai": "Officetel",
+    "dienTich": 35,
+    "giaCoBan": 7500000,
+    "moTa": "Phù hợp làm văn phòng nhỏ hoặc kết hợp ở/làm việc."
+  },
+  {
+    "id": 11,
+    "tenLoai": "Loft Duplex",
+    "dienTich": 60,
+    "giaCoBan": 11000000,
+    "moTa": "Thiết kế gác lửng, tạo không gian mở và thoáng đãng."
+  },
+  {
+    "id": 12,
+    "tenLoai": "3PN Cao cấp",
+    "dienTich": 110,
+    "giaCoBan": 22000000,
+    "moTa": "Nội thất đầy đủ, vị trí góc (corner unit), view đẹp."
+  },
+  {
+    "id": 13,
+    "tenLoai": "4 Phòng ngủ",
+    "dienTich": 140,
+    "giaCoBan": 28000000,
+    "moTa": "Loại hiếm, dành cho các gia đình lớn hoặc nhóm thuê cao cấp."
+  },
+  {
+    "id": 14,
+    "tenLoai": "Garden House",
+    "dienTich": 75,
+    "giaCoBan": 14500000,
+    "moTa": "Căn hộ tầng thấp có khu vườn hoặc ban công lớn."
+  },
+  {
+    "id": 15,
+    "tenLoai": "Studio Plus",
+    "dienTich": 32,
+    "giaCoBan": 6200000,
+    "moTa": "Studio cỡ lớn, có vách ngăn linh hoạt cho khu vực ngủ."
+  }
+]

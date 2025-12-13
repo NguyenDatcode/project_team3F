@@ -1,0 +1,55 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+
+<div class="container my-4">
+
+  <h2 class="mb-4 text-primary">
+    <i class="bi bi-search"></i> Tìm kiếm hợp đồng thuê
+  </h2>
+
+  <!-- Form tìm kiếm -->
+  <form id="searchInvoiceForm" class="mb-4">
+  <div class="row g-3 align-items-end">
+
+    <div class="col-md-4">
+      <label for="invoiceNumber" class="form-label">Số hóa đơn</label>
+      <input type="text" id="invoiceNumber" name="invoiceNumber" class="form-control" placeholder="Nhập mã số hợp đồng thuê">
+    </div>
+
+    <div class="col-md-4">
+      <label for="tenantName" class="form-label">Tên người thuê</label>
+      <input type="text" id="tenantName" name="tenantName" class="form-control" placeholder="Nhập tên người thuê">
+    </div>
+
+    <div class="col-md-4 d-flex align-items-end">
+      <button type="submit" class="btn btn-primary w-100">
+        <i class="bi bi-search"></i> Tìm kiếm
+      </button>
+    </div>
+
+  </div>
+</form>
+
+  <!-- Kết quả tìm kiếm -->
+  <div id="searchResults" class="mt-4">
+
+    <!-- Mẫu bảng kết quả -->
+    <table class="table table-hover align-middle">
+      <thead class="table-primary">
+        <tr>
+          <th scope="col">Mã hợp đồng</th>
+          <th scope="col">Tên người thuê</th>
+          <th scope="col">Ngày lập</th>
+            <th scope="col">Xem chi tiết </th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dữ liệu hóa đơn sẽ được đổ vào đây -->
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+{% endblock %}

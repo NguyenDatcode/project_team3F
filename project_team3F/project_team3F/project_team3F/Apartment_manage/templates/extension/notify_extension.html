@@ -1,0 +1,59 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+<div class="notification-page-container">
+
+    <h2 class="page-title">
+        <i class="bi bi-megaphone-fill"></i> Thông Báo Từ Ban Quản Lý
+    </h2>
+
+    <!-- FILTER -->
+    <div class="notification-filter">
+        <select class="form-select" id="filterType">
+            <option value="all">Tất cả thông báo</option>
+            <option value="maintenance">Bảo trì</option>
+            <option value="fee">Phí – Thanh toán</option>
+            <option value="community">Cộng đồng & sự kiện</option>
+        </select>
+    </div>
+
+    <!-- LIST -->
+    <div class="notification-list">
+
+        {% if notifications and notifications|length > 0 %}
+
+            {% for item in notifications %}
+                <div class="notification-item">
+
+                    <!-- ICON TÙY LOẠI -->
+                    <div class="icon-area
+                        {% if item.type == 'fee' %} fee
+                        {% elif item.type == 'event' %} event
+                        {% else %} default {% endif %}
+                    ">
+                        <i class="{{ item.icon }}"></i>
+                    </div>
+
+                    <div class="content-area">
+                        <h4 class="title">{{ item.title }}</h4>
+                        <p class="desc">{{ item.description }}</p>
+                        <span class="time">Đăng lúc: {{ item.created_at }}</span>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        {% else %}
+            <!-- EMPTY STATE -->
+            <div class="notification-empty">
+                <i class="bi bi-info-circle-fill"></i>
+                <p>Hiện tại chưa có thông báo nào.</p>
+                <span class="text-muted">Ban quản lý sẽ cập nhật ngay khi có thông tin mới.</span>
+            </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+<h1 class="text-info mt-1">Danh sách căn hộ</h1>
+
+<a href="#" class="btn btn-success mb-2">Thêm căn hộ</a>
+
+<table class="table table-bordered table-hover">
+    <tr class="bg-light">
+        <th>STT</th>
+        <th>Phòng số</th>
+        <th>Giá</th>
+        <th>Loại phòng</th>
+        <th>Trạng thái</th>
+        <th>Hành động</th>
+    </tr>
+
+    {% for a, t in apartments %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ a.title }}</td>
+        <td>{{ "{:,.0f}".format(a.price) }} VND</td>
+        <td>{{ t.tenLoai }}</td>
+        <td>{{ a.status }}</td>
+        <td>
+            <a href="/admin/apartment/edit/{{ a.id }}" class="btn btn-primary btn-sm">Sửa</a>
+            <a href="/admin/apartment/delete/{{ a.id }}" class="btn btn-danger btn-sm">Xóa</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

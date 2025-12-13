@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Thông báo bảo trì thang máy block A",
+    "description": "Ngày 25/01/2025, thang máy số 2 sẽ được bảo trì từ 8:00 đến 11:00. Vui lòng sử dụng thang máy khác.",
+    "type": "maintenance",
+    "icon": "bi bi-tools",
+    "created_at": "2025-01-22 10:30"
+  },
+  {
+    "id": 2,
+    "title": "Nhắc nhở đóng phí quản lý tháng 01/2025",
+    "description": "Cư dân vui lòng hoàn tất phí quản lý trước ngày 05/02/2025 để tránh phát sinh phạt trễ hạn.",
+    "type": "fee",
+    "icon": "bi bi-cash-coin",
+    "created_at": "2025-01-20 08:15"
+  },
+  {
+    "id": 3,
+    "title": "Sự kiện Tết 2025 tại khuôn viên chung cư",
+    "description": "Sự kiện chào xuân sẽ diễn ra lúc 19:00 ngày 28/01/2025. Kính mời cư dân tham dự.",
+    "type": "event",
+    "icon": "bi bi-people-fill",
+    "created_at": "2025-01-18 14:40"
+  },
+  {
+    "id": 4,
+    "title": "Thông báo về việc thay đổi lịch thu gom rác",
+    "description": "Lịch thu gom rác từ ngày 01/02/2025 sẽ thay đổi sang thứ 3 và thứ 6 hàng tuần.",
+    "type": "maintenance",
+    "icon": "bi bi-trash",
+    "created_at": "2025-01-15 09:00"
+  },
+  {
+    "id": 5,
+    "title": "Thông tin về nâng cấp hệ thống an ninh",
+    "description": "Hệ thống camera và bảo vệ cửa ra vào sẽ được nâng cấp từ 10/02/2025.",
+    "type": "maintenance",
+    "icon": "bi bi-shield-lock",
+    "created_at": "2025-01-12 16:30"
+  }
+]

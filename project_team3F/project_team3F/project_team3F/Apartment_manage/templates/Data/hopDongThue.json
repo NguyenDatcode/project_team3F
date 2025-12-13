@@ -1,0 +1,56 @@
+[
+  {
+    "maHopDong": "A1",
+    "ngayBatDau": "12/7/2025",
+    "thoiHan": 4,
+    "giaThue": 20,
+    "tienCoc": 3.5,
+    "trangThai": "Còn hiệu lực",
+    "apartment_id": 1
+  },
+  {
+    "maHopDong": "A2",
+    "ngayBatDau": "1/2/2025",
+    "thoiHan": 5,
+    "giaThue": 24,
+    "tienCoc": 4.5,
+    "trangThai": "Còn hiệu lực",
+    "apartment_id": 2
+  },
+  {
+    "maHopDong": "A3",
+    "ngayBatDau": "8/3/2025",
+    "thoiHan": 6,
+    "giaThue": 21,
+    "tienCoc": 5,
+    "trangThai": "Hết hiệu lực",
+    "apartment_id": 3
+  },
+  {
+    "maHopDong": "A4",
+    "ngayBatDau": "9/7/2025",
+    "thoiHan": 2,
+    "giaThue": 10,
+    "tienCoc": 9.5,
+    "trangThai": "Còn hiệu lực",
+    "apartment_id": 2
+  },
+  {
+    "maHopDong": "A5",
+    "ngayBatDau": "12/9/2023",
+    "thoiHan": 7,
+    "giaThue": 26,
+    "tienCoc": 7.5,
+    "trangThai": "Hết hiệu lực",
+    "apartment_id": 1
+  },
+  {
+    "maHopDong": "A6",
+    "ngayBatDau": "8/9/2023",
+    "thoiHan": 12,
+    "giaThue": 9,
+    "tienCoc": 1.5,
+    "trangThai": "Hết hiệu lực",
+    "apartment_id": 5
+  }
+]

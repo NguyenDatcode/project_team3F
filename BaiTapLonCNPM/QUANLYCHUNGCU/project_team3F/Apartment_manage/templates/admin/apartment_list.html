@@ -1,0 +1,33 @@
+<h2>Danh sách căn hộ</h2>
+
+<button class="btn btn-success mb-3" id="btnAdd">Thêm căn hộ</button>
+
+<table class="table table-bordered">
+    <thead class="table-success">
+        <tr>
+            <th>STT</th>
+            <th>Phòng số</th>
+            <th>Giá</th>
+            <th>Loại phòng</th>
+            <th>Trạng thái</th>
+            <th>HĐ</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for a in apartments %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ a.title }}</td>
+            <td>{{ a.price }}</td>
+            <td>{{ a.tenLoai }}</td>
+            <td>{{ a.status }}</td>
+            <td>
+                <button class="btn btn-warning btnEdit" data-id="{{ a.id }}">Sửa</button>
+                <button class="btn btn-danger btnDelete" data-id="{{ a.id }}">Xóa</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div id="ajaxForm"></div>

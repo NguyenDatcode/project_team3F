@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    body {
+        background: #f5f7fb;
+    }
+
+    .sidebar {
+        width: 270px;
+        height: 100vh;
+        background: #fff;
+        border-right: 1px solid #ddd;
+        padding: 20px 0;
+        position: fixed;
+        overflow-y: auto;
+    }
+
+    /* Style chung cho các mục menu */
+    .sidebar a {
+        text-decoration: none;
+        color: #333;
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 0;
+        font-weight: 500;
+        font-size: 15px;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    .sidebar a:hover {
+        background: #e8efff;
+        color: #0d6efd;
+    }
+
+    /* Style cho Header của các mục có thể mở rộng */
+    .sidebar .collapsible-header {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .sidebar .collapsible-header i.arrow-icon {
+        margin-left: auto;
+        font-size: 14px;
+        transition: transform 0.3s;
+    }
+
+    /* Xoay mũi tên khi collapse đang mở */
+    .sidebar .collapsible-header:not(.collapsed) i.arrow-icon {
+        transform: rotate(180deg);
+    }
+
+    .sidebar .menu-icon {
+        margin-right: 10px;
+        font-size: 18px;
+        width: 20px;
+    }
+
+    /* Style cho các mục con (thụt vào) */
+    .sidebar .collapse a {
+        padding-left: 45px;
+        font-weight: normal;
+        font-size: 14px;
+    }
+
+    /* Style riêng cho nút Đăng xuất */
+    .sidebar .logout-link {
+        color: #dc3545 !important;
+        margin-top: 20px;
+    }
+
+    .sidebar .logout-link:hover {
+        background: #f8d7da;
+    }
+
+    .content-area {
+        margin-left: 280px;
+        padding: 40px;
+        text-align: center;
+        padding:200px;
+    }
+
+    .chart-box {
+        background: #fff;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h5 class="fw-bold mb-4 px-4">Quản trị hệ thống</h5>
+
+    <!-- CĂN HỘ -->
+    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/apartments')">
+    <i class="menu-icon fas fa-home"></i>
+    Quản lý căn hộ
+    </a>
+
+    <!-- DỊCH VỤ -->
+    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/services')">
+        <i class="menu-icon fas fa-wrench"></i>
+        Quản lý dịch vụ
+    </a>
+
+    <!-- HỢP ĐỒNG -->
+    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/contracts')">
+        <i class="menu-icon fas fa-file-contract"></i>
+        Hợp đồng thuê
+    </a>
+
+    <!-- HÓA ĐƠN -->
+    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/bills')">
+        <i class="menu-icon fas fa-file-invoice"></i>
+        Quản lý hóa đơn
+    </a>
+
+    <!-- TÀI KHOẢN -->
+    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/accounts')">
+        <i class="menu-icon fas fa-cog"></i>
+        Quản lý tài khoản
+    </a>
+
+    <!-- THỐNG KÊ -->
+    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/statistics')">
+        <i class="menu-icon fas fa-chart-pie"></i>
+        Thống kê báo cáo
+    </a>
+
+    <a href="/logout" class="logout-link mt-4">
+        <i class="menu-icon fas fa-sign-out-alt"></i>
+        Đăng xuất
+    </a>
+
+    <div class="px-4 py-3">
+        <button class="btn btn-primary w-100 fw-bold" style="background-color: #0d6efd; border-radius: 8px;">VN</button>
+    </div>
+</div>
+
+
+<div class="content-area p-4">
+    <h3 class="fw-bold mb-4">Chào mừng trở lại</h3>
+    <div id="dynamicContent" class="dynamic-content"></div>
+</div>
+
+<!-- Mặc định không có form, chỉ hiện "Chào mừng trở lại" -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/admin_dashboard.js') }}"></script>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 [
   {
-    "maHopDong": "A1",
+    "maHopDong": 1,
     "maNguoiDung": "NT001",
     "vaiTro": "Trưởng nhóm",
     "ngayThamGia": "2025-07-12",
@@ -9,7 +9,7 @@
     "ngayHetHan": "2029-07-12"
   },
   {
-    "maHopDong": "A2",
+    "maHopDong": 2,
     "maNguoiDung": "NT002",
     "vaiTro": "Thành viên",
     "ngayThamGia": "2025-02-01",

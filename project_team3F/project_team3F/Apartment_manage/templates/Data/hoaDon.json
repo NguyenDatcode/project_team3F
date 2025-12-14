@@ -9,7 +9,8 @@
     "tienNuoc": 120,
     "phuPhiKhac": 0.5,
     "tongCong": 20.97,
-    "ngayTaoHoaDon": "2025-07-01"
+    "ngayTaoHoaDon": "2025-07-01",
+    "status": "UNPAID"
   },
   {
     "maHoaDon": "HD002",
@@ -21,9 +22,11 @@
     "tienNuoc": 150,
     "phuPhiKhac": 1.0,
     "tongCong": 25.56,
-    "ngayTaoHoaDon": "2025-07-02"
-},
-  { "maHoaDon": "HD003",
+    "ngayTaoHoaDon": "2025-07-02",
+    "status": "PAID"
+  },
+  {
+    "maHoaDon": "HD003",
     "maHopDong": "A3",
     "thang": 8,
     "nam": 2026,
@@ -32,6 +35,7 @@
     "tienNuoc": 219,
     "phuPhiKhac": 7.0,
     "tongCong": 32.86,
-    "ngayTaoHoaDon": "2025-07-03"
+    "ngayTaoHoaDon": "2025-07-03",
+    "status": "UNPAID"
   }
 ]

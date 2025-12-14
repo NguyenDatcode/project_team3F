@@ -3,6 +3,8 @@ import hashlib
 from datetime import datetime, timedelta
 
 import cloudinary.uploader
+from sqlalchemy.orm import joinedload
+
 from Apartment_manage.models import Apartment, ApartmentType, Contract, User
 from Apartment_manage import db
 from sqlalchemy.exc import IntegrityError

@@ -1,38 +1,122 @@
-<div class="modal fade" id="apartmentModal">
-  <div class="modal-dialog">
+<!--<div class="modal fade" id="apartmentModal" tabindex="-1">-->
+<!--  <div class="modal-dialog modal-lg">-->
+<!--    <div class="modal-content">-->
+<!--      <form id="apartmentForm" enctype="multipart/form-data">-->
+<!--        <div class="modal-header">-->
+<!--          <h5 class="modal-title" id="modalTitle">Thêm căn hộ</h5>-->
+<!--          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>-->
+<!--        </div>-->
+
+<!--        <div class="modal-body">-->
+<!--          <input type="hidden" id="apartmentId">-->
+
+<!--          <div class="mb-3">-->
+<!--            <label class="form-label">Tên căn hộ</label>-->
+<!--            <input type="text" class="form-control" id="title" required>-->
+<!--          </div>-->
+
+<!--          <div class="row">-->
+<!--            <div class="col">-->
+<!--              <label>Giá</label>-->
+<!--              <input type="number" class="form-control" id="price" required>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--              <label>Diện tích</label>-->
+<!--              <input type="number" class="form-control" id="area" required>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="mb-3 mt-2">-->
+<!--            <label>Loại căn hộ</label>-->
+<!--            <select class="form-select" id="type_id" required>-->
+<!--              {% for t in types %}-->
+<!--              <option value="{{ t.id }}">{{ t.tenLoai }}</option>-->
+<!--              {% endfor %}-->
+<!--            </select>-->
+<!--          </div>-->
+
+<!--          <div class="mb-3">-->
+<!--            <label>Ảnh căn hộ</label>-->
+<!--            <input type="file" class="form-control" id="image">-->
+<!--          </div>-->
+
+<!--          <div class="mb-3">-->
+<!--            <label>Mô tả</label>-->
+<!--            <textarea class="form-control" id="description_short"></textarea>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="modal-footer">-->
+<!--          <button type="submit" class="btn btn-primary">Lưu</button>-->
+<!--        </div>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="modal fade" id="apartmentModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <form id="formApartment">
+      <form id="apartmentForm" enctype="multipart/form-data">
 
         <div class="modal-header">
-          <h5 class="modal-title">Căn hộ</h5>
-          <button class="btn-close" data-bs-dismiss="modal"></button>
+          <h5 class="modal-title" id="modalTitle">Thêm căn hộ</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
 
         <div class="modal-body">
-          <input type="hidden" id="apId">
+          <input type="hidden" id="apartmentId" name="id">
 
-          <input class="form-control mb-2" id="title" placeholder="Tiêu đề" required>
-          <input class="form-control mb-2" id="price" type="number" placeholder="Giá" required>
+          <div class="mb-3">
+            <label class="form-label">Tên căn hộ</label>
+            <input type="text" class="form-control"
+                   id="title" name="title" required>
+          </div>
 
-          <select class="form-select mb-2" id="apartment_type_id" required>
-            {% for t in types %}
-              <option value="{{ t.id }}">{{ t.name }}</option>
-            {% endfor %}
-          </select>
+          <div class="row">
+            <div class="col">
+              <label>Giá</label>
+              <input type="number" class="form-control"
+                     id="price" name="price" required min="0">
+            </div>
+            <div class="col">
+              <label>Diện tích</label>
+              <input type="number" class="form-control"
+                     id="area" name="area" required min="1">
+            </div>
+          </div>
 
-          <select class="form-select" id="status">
-            <option value="available">Trống</option>
-            <option value="rented">Đã thuê</option>
-            <option value="maintenance">Bảo trì</option>
-          </select>
+          <div class="mb-3 mt-2">
+            <label>Loại căn hộ</label>
+            <select class="form-select"
+                    id="type_id" name="type_id" required>
+              {% for t in types %}
+              <option value="{{ t.id }}">{{ t.tenLoai }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label>Ảnh căn hộ</label>
+            <input type="file" class="form-control"
+                   id="image" name="image"
+                   accept="image/*">
+          </div>
+
+          <div class="mb-3">
+            <label>Mô tả</label>
+            <textarea class="form-control"
+                      id="description_short"
+                      name="description_short"></textarea>
+          </div>
         </div>
 
         <div class="modal-footer">
-          <button class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-          <button class="btn btn-primary">Lưu</button>
+          <button type="submit" class="btn btn-primary">Lưu</button>
         </div>
-
       </form>
     </div>
   </div>
 </div>
+
+

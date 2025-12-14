@@ -148,18 +148,18 @@ def api_get_apartments():
     return jsonify(dao.get_all_apartments_with_type())
 
 
-@admin_bp.route("/api/apartments", methods=["POST"])
+@app.route("/admin/api/apartments", methods=["POST"])
 @login_required
 def api_add_apartment():
-    dao.add_apartment(request.json)
-    return jsonify(success=True)
+    dao.add_apartment(request.form, request.files.get("image"))
+    return jsonify({"success": True})
 
 
-@admin_bp.route("/api/apartments/<int:ap_id>", methods=["PUT"])
+@app.route("/admin/api/apartments/<int:ap_id>", methods=["PUT"])
 @login_required
 def api_update_apartment(ap_id):
-    dao.update_apartment(ap_id, request.json)
-    return jsonify(success=True)
+    dao.update_apartment(ap_id, request.form, request.files.get("image"))
+    return jsonify({"success": True})
 
 
 @admin_bp.route("/api/apartments/<int:ap_id>", methods=["DELETE"])
@@ -172,7 +172,6 @@ def api_delete_apartment(ap_id):
 app.register_blueprint(admin_bp)
 
 
-# ================= RUN =================
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()

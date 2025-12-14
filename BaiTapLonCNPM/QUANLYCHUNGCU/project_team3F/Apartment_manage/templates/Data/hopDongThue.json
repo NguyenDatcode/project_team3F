@@ -6,7 +6,8 @@
     "giaThue": 20,
     "tienCoc": 3.5,
     "trangThai": "Còn hiệu lực",
-    "apartment_id": 1
+    "apartment_id": 1,
+    "tenant_name": "Nguyen Van A"
   },
   {
     "maHopDong": "A2",
@@ -15,7 +16,8 @@
     "giaThue": 24,
     "tienCoc": 4.5,
     "trangThai": "Còn hiệu lực",
-    "apartment_id": 2
+    "apartment_id": 2,
+    "tenant_name": "Tran Thi B"
   },
   {
     "maHopDong": "A3",
@@ -24,7 +26,8 @@
     "giaThue": 21,
     "tienCoc": 5,
     "trangThai": "Hết hiệu lực",
-    "apartment_id": 3
+    "apartment_id": 3,
+    "tenant_name": "Le Van C"
   },
   {
     "maHopDong": "A4",
@@ -33,7 +36,8 @@
     "giaThue": 10,
     "tienCoc": 9.5,
     "trangThai": "Còn hiệu lực",
-    "apartment_id": 2
+    "apartment_id": 2,
+    "tenant_name": "Pham Thi D"
   },
   {
     "maHopDong": "A5",
@@ -42,7 +46,8 @@
     "giaThue": 26,
     "tienCoc": 7.5,
     "trangThai": "Hết hiệu lực",
-    "apartment_id": 1
+    "apartment_id": 1,
+    "tenant_name": "Hoang Van E"
   },
   {
     "maHopDong": "A6",
@@ -51,6 +56,7 @@
     "giaThue": 9,
     "tienCoc": 1.5,
     "trangThai": "Hết hiệu lực",
-    "apartment_id": 5
+    "apartment_id": 5,
+    "tenant_name": "Nguyen Thi F"
   }
 ]

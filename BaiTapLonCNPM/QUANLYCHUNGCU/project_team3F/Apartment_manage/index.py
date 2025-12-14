@@ -6,7 +6,8 @@ from flask_login import logout_user, login_user, login_required
 
 from Apartment_manage import dao, login, create_app, db
 from Apartment_manage.dao import add_user
-from Apartment_manage.models import User, UserRole
+from Apartment_manage.models import User, UserRole, Contract, Invoice
+
 # from Apartment_manage.admin import admin_bp
 
 
@@ -120,6 +121,52 @@ def logout_process():
     logout_user()
     return redirect(url_for("home_page"))
 
+@app.route("/extension/notify_extension")
+def notifications_page():
+    # Nếu bạn dùng file JSON
+    import json, os
+    path = os.path.join(app.root_path, "templates", "Data", "notify.json")
+    with open(path, "r", encoding="utf-8") as f:
+        notifications = json.load(f)
+
+    return render_template("extension/notify_extension.html", notifications=notifications)
+
+@app.route("/extension/payment_extension", methods=["GET"])
+def search_invoice():
+    invoices = None
+    maHoaDon = request.args.get("maHoaDon")
+    tenantName = request.args.get("tenantName")
+
+    if maHoaDon or tenantName:
+        query = Invoice.query.join(Contract)
+        if maHoaDon:
+            query = query.filter(Invoice.maHoaDon.ilike(f"%{maHoaDon}%"))
+        if tenantName:
+            query = query.filter(Contract.tenant_name.ilike(f"%{tenantName}%"))
+        invoices = query.all()
+
+    return render_template("extension/payment_extension.html", invoices=invoices)
+
+
+@app.route("/extension/deal_extension", methods=["GET"])
+def search_contract():
+    contracts = None
+    maHopDong = request.args.get("maHopDong")
+    tenantName = request.args.get("tenantName")
+
+    if maHopDong or tenantName:
+        query = Contract.query
+        if maHopDong:
+            query = query.filter(Contract.maHopDong.ilike(f"%{maHopDong}%"))
+        if tenantName:
+            query = query.filter(Contract.tenant_name.ilike(f"%{tenantName}%"))
+        contracts = query.all()
+
+    return render_template("extension/deal_extension.html", contracts=contracts)
+@app.route("/extension/contract/<int:contract_id>")
+def view_contract(contract_id):
+    contract = Contract.query.get_or_404(contract_id)
+    return render_template("extension/contract_detail.html", contract=contract)
 
 # ================= ADMIN BLUEPRINT =================
 admin_bp = Blueprint("admin", __name__, url_prefix="/admin")

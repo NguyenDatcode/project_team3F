@@ -1,5 +1,6 @@
 import hashlib
 import os
+from datetime import datetime, timedelta
 
 import cloudinary.uploader
 from sqlalchemy.orm import joinedload
@@ -48,7 +49,7 @@ def get_all_apartments():
 
 def get_all_apartments_with_type():
     apartments = Apartment.query.options(
-        joinedload(Apartment.apartment_type)
+        joinedload(Apartment.type)
     ).all()
 
     return [{
@@ -58,7 +59,7 @@ def get_all_apartments_with_type():
         "area": a.area,
         "status": a.status,
         "type_id": a.type_id,
-        "type_name": a.apartment_type.tenLoai if a.apartment_type else "",
+        "type_name": a.type.tenLoai if a.type else "",
         "image_url": a.image_url,
         "description_short": a.description_short
     } for a in apartments]
@@ -107,10 +108,14 @@ def update_apartment(ap_id, data, image_file):
     db.session.commit()
 
 
-
-
 def delete_apartment(ap_id):
     ap = Apartment.query.get(ap_id)
     if ap:
         db.session.delete(ap)
         db.session.commit()
+
+
+# Contracts expiring (helper)
+def get_expiring_contracts(days=30):
+    limit = datetime.today() + timedelta(days=days)
+    return Contract.query.filter(Contract.ngayBatDau <= limit).all()

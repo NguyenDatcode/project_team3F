@@ -102,7 +102,7 @@
     <h5 class="fw-bold mb-4 px-4">Quản trị hệ thống</h5>
 
     <!-- CĂN HỘ -->
-    <a href="javascript:void(0)" onclick="loadAdminPage()">
+    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/apartments')">
     <i class="menu-icon fas fa-home"></i>
     Quản lý căn hộ
     </a>
@@ -119,8 +119,14 @@
         Hợp đồng thuê
     </a>
 
+    <!-- QUY ĐỊNH -->
+    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/regulations')">
+        <i class="menu-icon fas fa-balance-scale"></i>
+        Quản lý quy định
+    </a>
+
     <!-- HÓA ĐƠN -->
-    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/bills')">
+    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/invoices')">
         <i class="menu-icon fas fa-file-invoice"></i>
         Quản lý hóa đơn
     </a>
@@ -132,7 +138,7 @@
     </a>
 
     <!-- THỐNG KÊ -->
-    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/statistics')">
+    <a href="javascript:void(0)" onclick="loadAdminPage('/admin/reports')">
         <i class="menu-icon fas fa-chart-pie"></i>
         Thống kê báo cáo
     </a>
@@ -160,6 +166,12 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{{ url_for('static', filename='js/admin_dashboard.js') }}"></script>
 <script src="{{ url_for('static', filename='js/admin_apartment.js') }}"></script>
+<script src="{{ url_for('static', filename='js/admin_service.js') }}"></script>
+<script src="{{ url_for('static', filename='js/admin_contract.js') }}"></script>
+<script src="{{ url_for('static', filename='js/admin_regulation.js') }}"></script>
+<script src="{{ url_for('static', filename='js/admin_invoice.js') }}"></script>
+<script src="{{ url_for('static', filename='js/admin_account.js') }}"></script>
+<script src="{{ url_for('static', filename='js/admin_report.js') }}"></script>
 
 </body>
 </html>

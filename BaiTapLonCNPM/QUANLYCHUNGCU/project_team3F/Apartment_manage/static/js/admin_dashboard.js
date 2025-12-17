@@ -1,25 +1,15 @@
-function loadAdminPage() {
-    fetch('/admin/apartments')
-        .then(res => {
-            console.log(res);
-            if (!res.ok) throw new Error("404 Not Found");
-            return res.text();
-        })
+
+function loadAdminPage(url) {
+    fetch(url)
+        .then(res => res.text())
         .then(html => {
             document.getElementById("dynamicContent").innerHTML = html;
-
-//            if ("/admin/apartments".includes("apartments")) {
-//                loadApartments();
-//            }
-
-              if (typeof initApartmentPage === "function") {
-                initApartmentPage();
-            }
-        })
-        .catch(err => {
-            document.getElementById("dynamicContent").innerHTML =
-                `<div class="alert alert-danger">Không load được trang</div>`;
-            console.error(err);
+            if (url.includes("apartments")) initApartmentPage();
+            if (url.includes("services")) initServicePage();
+            if (url.includes("contracts")) initContractPage();
+            if (url.includes("regulations")) initRegulationPage();
+            if (url.includes("invoices")) initInvoicePage();
+            if (url.includes("accounts")) initAccountPage();
+            if (url.includes("reports")) initReportPage();
         });
 }
-

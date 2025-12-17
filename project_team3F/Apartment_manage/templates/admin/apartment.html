@@ -1,99 +1,28 @@
-{% extends 'admin-dashboard.html' %}
+<div class="card">
+    <div class="card-body">
+        <h4 class="fw-bold mb-3">Quản lý căn hộ</h4>
 
-{% block admin_content %}
-<div class="container-fluid">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tiêu đề</th>
+                    <th>Giá</th>
+                    <th>Loại</th>
+                    <th>Trạng thái</th>
+                    <th>Hình ảnh</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="tblApartments"></tbody>
+        </table>
 
-  <!-- Tiêu đề + nút thêm -->
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="fw-bold">Danh sách căn hộ</h2>
-    <a class="btn btn-primary" id="btnAdd">
-      <i class="bi bi-plus-lg"></i> Thêm căn hộ
-    </a>
-  </div>
-
-  <!-- TABLE LIST -->
-  <div class="card shadow-sm">
-    <div class="card-body p-0">
-
-      <table class="table table-hover align-middle mb-0">
-        <thead class="table-light">
-          <tr>
-            <th style="width: 60px;">#</th>
-            <th style="width: 300px;">Tiêu đề</th>
-            <th style="width: 120px;">Giá</th>
-            <th style="width: 150px;">Loại</th>
-            <th style="width: 150px;">Trạng thái</th>
-            <th style="width: 120px; text-align: center;">Hành động</th>
-          </tr>
-        </thead>
-
-        <tbody id="tblBody">
-          <!-- JS sẽ load dữ liệu vào đây -->
-        </tbody>
-
-      </table>
-
+        <button class="btn btn-primary mb-3" onclick="openAddModal()">
+            + Thêm căn hộ
+        </button>
     </div>
-  </div>
-
 </div>
 
-<!-- MODAL -->
-<div class="modal fade" id="apartmentModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <form id="formApartment">
-        <div class="modal-header">
-          <h5 class="modal-title">Thêm / Sửa căn hộ</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
+{% include 'admin/apartment_modal.html' %}
+<script src="{{ url_for('static', filename='js/admin_apartment.js') }}"></script>
 
-        <div class="modal-body">
-
-          <input type="hidden" id="apId">
-
-          <div class="mb-3">
-            <label class="form-label">Tiêu đề</label>
-            <input class="form-control" id="title" required>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Giá</label>
-            <input class="form-control" id="price" type="number" required>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Loại căn hộ</label>
-            <select id="apartment_type_id" class="form-select" required>
-              <option value="">-- Chọn loại --</option>
-              {% for t in types %}
-              <option value="{{ t.id }}">{{ t.name }}</option>
-              {% endfor %}
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Trạng thái</label>
-            <select id="status" class="form-select">
-              <option value="available">Căn hộ đang trống</option>
-              <option value="rented">Đang có người thuê</option>
-              <option value="maintenance">Đang sửa chữa</option>
-            </select>
-          </div>
-
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Đóng</button>
-          <button type="submit" class="btn btn-primary">Lưu</button>
-        </div>
-
-      </form>
-    </div>
-  </div>
-</div>
-{% endblock %}
-
-{% block scripts %}
-<script src="{{ url_for('static', filename='js/admin_apartments.js') }}"></script>
-{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Chi Tiết Hợp Đồng{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Chi Tiết Hợp Đồng #{{ contract.maHopDong }}</h2>
+
+    <!-- Thông tin hợp đồng -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            Thông tin hợp đồng
+        </div>
+        <div class="card-body">
+            <div class="row mb-2">
+                <div class="col-md-4 font-weight-bold">Tên người thuê:</div>
+                <div class="col-md-8">{{ contract.tenant_name }}</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4 font-weight-bold">Ngày bắt đầu:</div>
+                <div class="col-md-8">{{ contract.ngayBatDau.strftime('%d/%m/%Y') }}</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4 font-weight-bold">Thời hạn (tháng):</div>
+                <div class="col-md-8">{{ contract.thoiHan }}</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4 font-weight-bold">Giá thuê:</div>
+                <div class="col-md-8">{{ "{:,.0f}".format(contract.giaThue) }} VND</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4 font-weight-bold">Tiền cọc:</div>
+                <div class="col-md-8">{{ "{:,.0f}".format(contract.tienCoc) }} VND</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4 font-weight-bold">Trạng thái:</div>
+                <div class="col-md-8">{{ contract.trangThai.value }}</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4 font-weight-bold">Căn hộ:</div>
+                <div class="col-md-8">
+                    {% if contract.apartment %}
+                        {{ contract.apartment.title }} - {{ contract.apartment.location }}
+                    {% else %}
+                        Không có
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Danh sách thành viên hợp đồng -->
+    <h4>Danh sách thành viên</h4>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Mã người dùng</th>
+                <th>Vai trò</th>
+                <th>Ngày tham gia</th>
+                <th>Ngày rời đi</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ member.maNguoiDung }}</td>
+                <td>{{ member.vaiTro }}</td>
+                <td>{{ member.ngayThamGia }}</td>
+                <td>{{ member.ngayRoiDi if member.ngayRoiDi else "-" }}</td>
+                <td>{{ member.trangThai }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('search_contract') }}" class="btn btn-secondary mt-3">Quay lại</a>
+</div>
+{% endblock %}

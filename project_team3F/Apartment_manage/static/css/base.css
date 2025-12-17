@@ -1,4 +1,7 @@
- /* Container chính cho Carousel */
+.main-container {
+    padding-top: 100px;
+}
+        /* Container chính cho Carousel */
 #heroCarousel {
     width: 100%;
     max-width: 1200px; /* Giới hạn chiều rộng tối đa */
@@ -452,7 +455,6 @@ color: inherit;
   .navbar .nav-link:hover {
     color: #ffc107;
   }
-
   .notification-page-container {
     margin-top: 110px;
     padding: 20px 60px;
@@ -540,3 +542,8 @@ color: inherit;
     border: 1px dashed #ccc;
     border-radius: 15px;
 }
+
+<<<<<<< HEAD:Apartment_manage/static/css/base.css
+
+=======
+>>>>>>> ea9d78f (y):project_team3F/Apartment_manage/static/css/base.css

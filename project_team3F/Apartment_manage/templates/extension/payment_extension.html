@@ -8,47 +8,68 @@
   </h2>
 
   <!-- Form tìm kiếm -->
-  <form id="searchInvoiceForm" class="mb-4">
-  <div class="row g-3 align-items-end">
+  <form id="searchInvoiceForm" class="mb-4" action="{{ url_for('search_invoice') }}" method="get">
+    <div class="row g-3 align-items-end">
 
-    <div class="col-md-4">
-      <label for="invoiceNumber" class="form-label">Số hóa đơn</label>
-      <input type="text" id="invoiceNumber" name="invoiceNumber" class="form-control" placeholder="Nhập số hóa đơn">
+      <div class="col-md-4">
+        <label for="invoiceNumber" class="form-label">Số hóa đơn</label>
+        <input type="text" name="maHoaDon" class="form-control" placeholder="Nhập số hóa đơn">
+      </div>
+
+      <div class="col-md-4">
+        <label for="tenantName" class="form-label">Tên người thuê</label>
+        <input type="text" name="tenantName" class="form-control" placeholder="Nhập tên người thuê">
+      </div>
+
+      <div class="col-md-4 d-flex align-items-end">
+        <button type="submit" class="btn btn-primary w-100">
+          <i class="bi bi-search"></i> Tìm kiếm
+        </button>
+      </div>
+
     </div>
+  </form>
 
-    <div class="col-md-4">
-      <label for="tenantName" class="form-label">Tên người thuê</label>
-      <input type="text" id="tenantName" name="tenantName" class="form-control" placeholder="Nhập tên người thuê">
-    </div>
-
-    <div class="col-md-4 d-flex align-items-end">
-      <button type="submit" class="btn btn-primary w-100">
-        <i class="bi bi-search"></i> Tìm kiếm
-      </button>
-    </div>
-
-  </div>
-</form>
-
-  <!-- Kết quả tìm kiếm -->
   <div id="searchResults" class="mt-4">
 
-    <!-- Mẫu bảng kết quả -->
-    <table class="table table-hover align-middle">
-      <thead class="table-primary">
-        <tr>
-          <th scope="col">Số hóa đơn</th>
-          <th scope="col">Tên người thuê</th>
-          <th scope="col">Ngày lập</th>
-          <th scope="col">Số tiền
-            <th scope="col">Trạng Thái</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Dữ liệu hóa đơn sẽ được đổ vào đây -->
-      </tbody>
-    </table>
-
+   {% if invoices %}
+<table class="table table-hover align-middle">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">Số hóa đơn</th>
+      <th scope="col">Tên người thuê</th>
+      <th scope="col">Ngày lập</th>
+      <th scope="col">Số tiền</th>
+      <th scope="col">Trạng Thái</th>
+      <th scope="col">Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for invoice in invoices %}
+    <tr>
+      <td>{{ invoice.maHoaDon }}</td>
+      <td>{{ invoice.maHopDong.tenant_name }}</td>
+      <td>{{ invoice.ngayTaoHoaDon }}</td>
+      <td>{{ invoice.tongCong }}</td>
+      <td>{{ invoice.status.value }}</td>
+      <td>
+        {% if invoice.status.value == "Chưa thanh toán" %}
+          <button class="btn btn-success btn-sm" onclick="payInvoice('{{ invoice.maHoaDon }}')">
+            Thanh toán
+          </button>
+        {% else %}
+          <span class="text-muted">Đã thanh toán</span>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="alert alert-warning" role="alert">
+  Không tìm thấy hóa đơn nào phù hợp!
+</div>
+{% endif %}
   </div>
 
 </div>

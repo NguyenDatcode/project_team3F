@@ -1,7 +1,7 @@
 [
   {
     "maHopDong": "A1",
-    "maNguoiDung": "NT001",
+    "id": 1,
     "vaiTro": "Trưởng nhóm",
     "ngayThamGia": "2025-07-12",
     "ngayRoiDi": "",
@@ -9,10 +9,28 @@
     "ngayHetHan": "2029-07-12"
   },
   {
-    "maHopDong": "A2",
-    "maNguoiDung": "NT002",
+    "maHopDong": "A4",
+    "id": 2,
     "vaiTro": "Thành viên",
     "ngayThamGia": "2025-02-01",
+    "ngayRoiDi": "",
+    "trangThai": "Đang ở",
+    "ngayHetHan": "2030-02-01"
+  },
+  {
+    "maHopDong": "A3",
+    "id": 1,
+    "vaiTro": "Thành viên",
+    "ngayThamGia": "2025-08-01",
+    "ngayRoiDi": "",
+    "trangThai": "Đang ở",
+    "ngayHetHan": "2029-07-12"
+  },
+  {
+    "maHopDong": "A5",
+    "id": 4,
+    "vaiTro": "Thành viên",
+    "ngayThamGia": "2025-03-15",
     "ngayRoiDi": "",
     "trangThai": "Đang ở",
     "ngayHetHan": "2030-02-01"

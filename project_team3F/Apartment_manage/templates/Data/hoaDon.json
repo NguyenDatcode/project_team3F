@@ -9,7 +9,8 @@
     "tienNuoc": 120,
     "phuPhiKhac": 0.5,
     "tongCong": 20.97,
-    "ngayTaoHoaDon": "2025-07-01"
+    "ngayTaoHoaDon": "2025-07-01",
+    "status": "UNPAID"
   },
   {
     "maHoaDon": "HD002",
@@ -21,9 +22,11 @@
     "tienNuoc": 150,
     "phuPhiKhac": 1.0,
     "tongCong": 25.56,
-    "ngayTaoHoaDon": "2025-07-02"
-},
-  { "maHoaDon": "HD003",
+    "ngayTaoHoaDon": "2025-07-02",
+    "status": "PAID"
+  },
+  {
+    "maHoaDon": "HD003",
     "maHopDong": "A3",
     "thang": 8,
     "nam": 2026,
@@ -32,6 +35,47 @@
     "tienNuoc": 219,
     "phuPhiKhac": 7.0,
     "tongCong": 32.86,
-    "ngayTaoHoaDon": "2025-07-03"
+    "ngayTaoHoaDon": "2025-07-03",
+    "status": "UNPAID"
+  },
+
+  {
+    "maHoaDon": "HD005",
+    "maHopDong": "A1",
+    "thang": 7,
+    "nam": 2025,
+    "tienPhong": 20.0,
+    "tienDien": 350,
+    "tienNuoc": 120,
+    "phuPhiKhac": 0.5,
+    "tongCong": 20.97,
+    "ngayTaoHoaDon": "2025-07-01",
+    "status": "UNPAID"
+  },
+  {
+    "maHoaDon": "HD006",
+    "maHopDong": "A2",
+    "thang": 7,
+    "nam": 2025,
+    "tienPhong": 24.0,
+    "tienDien": 410,
+    "tienNuoc": 150,
+    "phuPhiKhac": 1.0,
+    "tongCong": 25.56,
+    "ngayTaoHoaDon": "2025-07-02",
+    "status": "PAID"
+  },
+  {
+    "maHoaDon": "HD007",
+    "maHopDong": "A3",
+    "thang": 8,
+    "nam": 2026,
+    "tienPhong": 19.0,
+    "tienDien": 330,
+    "tienNuoc": 219,
+    "phuPhiKhac": 7.0,
+    "tongCong": 32.86,
+    "ngayTaoHoaDon": "2025-07-03",
+    "status": "PAID"
   }
 ]

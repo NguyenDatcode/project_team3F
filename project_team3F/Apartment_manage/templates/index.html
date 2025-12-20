@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+{% extends 'layout/base.html' %}
+{% block content %}
 
 <div class="main-container">
 
@@ -19,7 +19,7 @@
     </div>
     <div class="service-item">
       <i class="bi bi-book"></i>
-      <a href="#">Xem quy định</a>
+      <a href="/rule">Xem quy định</a>
     </div>
   </div>
 
@@ -74,3 +74,4 @@
 
 </div>
 
+{% endblock %}

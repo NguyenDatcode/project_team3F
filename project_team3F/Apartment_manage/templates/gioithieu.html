@@ -1,0 +1,218 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+
+<div class="intro-container">
+
+  <section class="hero-section text-center fade-in">
+    <h1 class="display-3">GREEN APARTMENT MINI</h1>
+    <p class="lead text-muted">
+      <i class="fas fa-leaf"></i> Không gian sống xanh – tiện nghi – ấm cúng giữa lòng thành phố.<br>
+      Nơi lý tưởng cho những gia đình nhỏ và người độc thân muốn tận hưởng cuộc sống hiện đại, tiện nghi và gần gũi thiên nhiên.
+    </p>
+    <a href="#apartment-list" class="btn btn-primary btn-lg mt-3 smooth-scroll">Xem căn hộ ngay <i class="fas fa-arrow-right"></i></a>
+  </section>
+
+  <hr class="my-5">
+
+  <section class="intro-text fade-in py-5">
+    <h2 class="section-title text-center mb-4"><i class="fas fa-building"></i> Tổng quan về GREEN APARTMENT MINI</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <p>
+              GREEN APARTMENT MINI được xây dựng với tiêu chí **"Nhỏ nhưng đầy đủ, tiện nghi nhưng ấm cúng"**. Mỗi căn hộ được thiết kế tối ưu hóa diện tích,
+              sử dụng nội thất hiện đại và vật liệu thân thiện với môi trường, mang đến không gian sống thoáng đãng, nhiều ánh sáng tự nhiên.
+            </p>
+            <ul class="list-unstyled detail-list">
+                <li><i class="fas fa-cubes text-success"></i> **Quy mô:** Gồm 3 tòa nhà (Block A, B, C) với tổng số **72 căn hộ**.</li>
+                <li><i class="fas fa-calendar-alt text-success"></i> **Năm hoàn thành:** **2023** (Tòa nhà mới, chất lượng cao).</li>
+                <li><i class="fas fa-ruler-combined text-success"></i> **Diện tích đa dạng:** Từ **40m²** (Studio/1PN) đến **70m²** (2PN/2WC).</li>
+                <li><i class="fas fa-hand-holding-usd text-success"></i> **Phân khúc giá:** Chỉ từ **5 - 9 triệu/tháng**.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <img src="https://xaydungnhatrongoi.vn/wp-content/uploads/2023/09/chung-c%C6%B0-mini-2.jpg" alt="Mô hình tổng quan chung cư" class="img-fluid rounded shadow">
+        </div>
+    </div>
+  </section>
+
+  <hr class="my-5">
+
+  <section class="location-section fade-in py-5 bg-light">
+    <h2 class="section-title text-center mb-4"><i class="fas fa-map-marker-alt"></i> Vị trí & Kết nối giao thông</h2>
+    <div class="row">
+        <div class="col-md-6">
+             <p>
+                Tọa lạc tại khu vực trung tâm đang phát triển, GREEN APARTMENT MINI mang lại lợi thế di chuyển vượt trội:
+            </p>
+            <ul class="list-unstyled detail-list">
+                <li><i class="fas fa-car text-info"></i> **Chỉ 15 phút** đến Quận 1 (qua cầu/đường lớn).</li>
+                <li><i class="fas fa-hospital text-info"></i> **Gần** các bệnh viện lớn (5 phút).</li>
+                <li><i class="fas fa-shopping-bag text-info"></i> **Tiện lợi** mua sắm với các siêu thị/trung tâm thương mại kề cận.</li>
+                <li><i class="fas fa-graduation-cap text-info"></i> **Kết nối nhanh** đến các trường Đại học, cao đẳng.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+             <div class="embed-responsive embed-responsive-4by3 rounded shadow">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.492520330689!2d106.60271031471853!3d10.77530699232375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752945d7a6e60b%3A0xf6f6f6f6f6f6f6f6!2zVmluY29tIE1hcnQgQ2l0eSBCZXQh!5e0!3m2!1svi!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="apartment-list" class="apartment-grid fade-in py-5">
+    <h2 class="section-title text-center mb-5"><i class="fas fa-home"></i> Các Mẫu Căn Hộ Tiêu Biểu</h2>
+
+    <div class="row">
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="apartment-card shadow-sm h-100">
+                <img src="https://res.cloudinary.com/dxxwcby8l/image/upload/v1647248722/r8sjly3st7estapvj19u.jpg" alt="Căn hộ A1" class="img-fluid rounded-top">
+                <div class="card-content p-4">
+                    <h3 class="card-title text-primary">Căn hộ A1 (1 Phòng ngủ)</h3>
+                    <p><i class="fas fa-expand-arrows-alt"></i> Diện tích: <strong>45 m²</strong></p>
+                    <p><i class="fas fa-bed"></i> Số phòng: <strong>1 ngủ, 1 tắm</strong></p>
+                    <p><i class="fas fa-dollar-sign"></i> Giá thuê: <strong class="text-danger">6,000,000 VNĐ/tháng</strong></p>
+
+                    <h5 class="mt-3">Tiện ích kèm theo:</h5>
+                    <div class="facility-list badge-group">
+                      <span class="badge bg-success"><i class="fas fa-shield-alt"></i> An ninh 24/7</span>
+                      <span class="badge bg-success"><i class="fas fa-wifi"></i> Wifi tốc độ cao</span>
+                      <span class="badge bg-success"><i class="fas fa-broom"></i> Vệ sinh định kỳ</span>
+                    </div>
+                    <a href="#" class="btn btn-outline-primary btn-sm mt-3 w-100">Xem chi tiết & Đăng ký</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="apartment-card shadow-sm h-100">
+                <img src="https://res.cloudinary.com/dxxwcby8l/image/upload/v1647248722/r8sjly3st7estapvj19u.jpg" alt="Căn hộ B2" class="img-fluid rounded-top">
+                <div class="card-content p-4">
+                    <h3 class="card-title text-primary">Căn hộ B2 (2 Phòng ngủ)</h3>
+                    <p><i class="fas fa-expand-arrows-alt"></i> Diện tích: <strong>55 m²</strong></p>
+                    <p><i class="fas fa-bed"></i> Số phòng: <strong>2 ngủ, 1 tắm</strong></p>
+                    <p><i class="fas fa-dollar-sign"></i> Giá thuê: <strong class="text-danger">8,000,000 VNĐ/tháng</strong></p>
+
+                    <h5 class="mt-3">Tiện ích kèm theo:</h5>
+                    <div class="facility-list badge-group">
+                      <span class="badge bg-success"><i class="fas fa-shield-alt"></i> An ninh 24/7</span>
+                      <span class="badge bg-success"><i class="fas fa-wifi"></i> Wifi tốc độ cao</span>
+                      <span class="badge bg-success"><i class="fas fa-elevator"></i> Thang máy mini</span>
+                    </div>
+                    <a href="#" class="btn btn-outline-primary btn-sm mt-3 w-100">Xem chi tiết & Đăng ký</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="apartment-card shadow-sm h-100">
+                <img src="https://res.cloudinary.com/dxxwcby8l/image/upload/v1647248722/r8sjly3st7estapvj19u.jpg" alt="Căn hộ C3" class="img-fluid rounded-top">
+                <div class="card-content p-4">
+                    <h3 class="card-title text-primary">Căn hộ C3 (Luxury)</h3>
+                    <p><i class="fas fa-expand-arrows-alt"></i> Diện tích: <strong>65 m²</strong></p>
+                    <p><i class="fas fa-bed"></i> Số phòng: <strong>2 ngủ, 2 tắm</strong></p>
+                    <p><i class="fas fa-dollar-sign"></i> Giá thuê: <strong class="text-danger">9,000,000 VNĐ/tháng</strong></p>
+
+                    <h5 class="mt-3">Tiện ích kèm theo:</h5>
+                    <div class="facility-list badge-group">
+                      <span class="badge bg-success"><i class="fas fa-shield-alt"></i> An ninh 24/7</span>
+                      <span class="badge bg-success"><i class="fas fa-wifi"></i> Wifi tốc độ cao</span>
+                      <span class="badge bg-success"><i class="fas fa-users"></i> Khu sinh hoạt chung</span>
+                    </div>
+                    <a href="#" class="btn btn-outline-primary btn-sm mt-3 w-100">Xem chi tiết & Đăng ký</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </section>
+
+  <hr class="my-5">
+
+  <section class="facilities-section fade-in py-5 bg-light">
+    <h2 class="section-title text-center mb-5"><i class="fas fa-star"></i> Tiện ích & Dịch vụ Nổi bật</h2>
+    <div class="facilities-grid row justify-content-center">
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="facility-card text-center p-3 h-100 shadow-sm">
+            <i class="fas fa-utensils fa-3x text-warning mb-3"></i>
+            <div class="facility-desc">Khu vực BBQ ngoài trời, thích hợp cho các buổi tụ tập, giao lưu bạn bè và gia đình.</div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="facility-card text-center p-3 h-100 shadow-sm">
+            <i class="fas fa-dumbbell fa-3x text-danger mb-3"></i>
+            <div class="facility-desc">Phòng tập Gym trang bị máy móc hiện đại, phục vụ miễn phí cho cư dân.</div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="facility-card text-center p-3 h-100 shadow-sm">
+            <i class="fas fa-child fa-3x text-primary mb-3"></i>
+            <div class="facility-desc">Khu vui chơi an toàn, thiết kế sáng tạo dành riêng cho trẻ em.</div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="facility-card text-center p-3 h-100 shadow-sm">
+            <i class="fas fa-parking fa-3x text-secondary mb-3"></i>
+            <div class="facility-desc">Bãi đỗ xe rộng rãi, có mái che, bảo vệ 24/7, đảm bảo an toàn tài sản.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="my-5">
+
+  <section class="services-section fade-in py-5">
+    <h2 class="section-title text-center mb-4"><i class="fas fa-hands-helping"></i> Dịch vụ Quản lý Toàn diện</h2>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <i class="fas fa-headset fa-4x text-info mb-3"></i>
+            <h4>Hỗ trợ 24/7</h4>
+            <p>Đội ngũ quản lý luôn sẵn sàng giải quyết mọi vấn đề kỹ thuật và sự cố phát sinh của cư dân.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <i class="fas fa-users-cog fa-4x text-info mb-3"></i>
+            <h4>Quản lý Chuyên nghiệp</h4>
+            <p>Hệ thống quản lý tòa nhà chuyên nghiệp, minh bạch về chi phí và dịch vụ chung cư.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <i class="fas fa-file-invoice-dollar fa-4x text-info mb-3"></i>
+            <h4>Hợp đồng Linh hoạt</h4>
+            <p>Hợp đồng thuê rõ ràng, minh bạch, hỗ trợ đa dạng thời hạn thuê từ 6 tháng đến 1 năm.</p>
+        </div>
+    </div>
+  </section>
+
+
+</div>
+
+<script>
+const fadeElements = document.querySelectorAll('.fade-in');
+const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+
+// Fade-in effect
+window.addEventListener('scroll', () => {
+  fadeElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      el.classList.add('visible');
+    }
+  });
+});
+
+// Smooth scroll (Bootstrap-like)
+smoothScrollLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+<h3>Quản lý dịch vụ</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã DV</th>
+            <th>Tên dịch vụ</th>
+            <th>Đơn giá</th>
+            <th>Đơn vị</th>
+            <th>Loại tính phí</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody id="tblServices"></tbody>
+</table>
+
+<!-- MODAL -->
+<div class="modal fade" id="serviceModal">
+  <div class="modal-dialog">
+    <form id="serviceForm">
+      <input type="hidden" id="serviceId">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="serviceModalTitle"></h5>
+        </div>
+
+        <div class="modal-body">
+          <input class="form-control mb-2" id="maDichVu" name="maDichVu" placeholder="Mã dịch vụ">
+          <input class="form-control mb-2" name="tenDichVu" placeholder="Tên dịch vụ" required>
+          <input class="form-control mb-2" name="donGia" type="number" placeholder="Đơn giá" required>
+          <input class="form-control mb-2" name="donViTinh" placeholder="Đơn vị tính">
+<!--            <select class="form-control" name="DonViTinh">-->
+<!--            <option>Tháng</option>-->
+<!--            <option>Tuần</option>-->
+<!--            <option>m3</option>-->
+<!--            <option>kWh</option>-->
+<!--            <option>lần/xe</option>-->
+<!--          </select>-->
+          <select class="form-control" name="loaiTinhPhi">
+            <option>Cố định/Căn hộ</option>
+            <option>Cố định/Người</option>
+            <option>Theo công tơ</option>
+            <option>Miễn phí</option>
+          </select>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-success">Lưu</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<button class="btn btn-primary mb-3" onclick="openAddServiceModal()">
+    Thêm dịch vụ
+</button>
+

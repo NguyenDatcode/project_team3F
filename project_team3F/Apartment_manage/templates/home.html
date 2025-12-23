@@ -1,7 +1,6 @@
 {% extends 'layout/base.html' %}
 {% block content %}
 
-<!-- ================== BANNER ================== -->
 <div id="heroCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
     <div class="carousel-inner">
 
@@ -27,7 +26,6 @@
     </button>
 </div>
 
-<!-- ================== GIỚI THIỆU ================== -->
 <div class="container mb-4">
     <h3>Căn hộ nổi bật</h3>
     <p>Thực hiện hóa ước mơ nghề nghiệp và nơi ở dành cho bạn.</p>
@@ -68,13 +66,13 @@
     </form>
 </div>
 
-<!-- ================== DANH SÁCH CĂN HỘ ================== -->
+
 <div class="container">
     <div class="row">
 
         {% for p in apartment %}
         <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm position-relative">
 
                 <img src="{{ p.image_url }}" class="card-img-top" alt="{{ p.title }}">
 
@@ -89,8 +87,12 @@
                         <i class="bi bi-rulers"></i> {{ p.area }} m²<br>
                         <i class="bi bi-geo-alt"></i> {{ p.location }}
                     </p>
-                </div>
 
+                    <!-- Nút liên hệ Zalo -->
+                    <a href="https://zalo.me/0703172549" target="_blank" class="btn btn-success w-100 mt-2">
+                        <i class="bi bi-chat-dots"></i> Liên hệ Zalo
+                    </a>
+                </div>
             </div>
         </div>
         {% endfor %}
@@ -98,7 +100,7 @@
     </div>
 </div>
 
-<!-- ================== PAGINATION ================== -->
+
 <div class="container mt-4">
     <nav>
         <ul class="pagination justify-content-center">
@@ -129,5 +131,12 @@
         </ul>
     </nav>
 </div>
+
+
+<a href="https://zalo.me/0703172549" target="_blank"
+   style="position:fixed; bottom:20px; right:20px; z-index:9999;"
+   class="btn btn-success btn-lg rounded-circle shadow">
+   <i class="bi bi-chat-dots"></i>
+</a>
 
 {% endblock %}

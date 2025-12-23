@@ -11,9 +11,9 @@ from Apartment_manage import db, create_app
 
 app = create_app()
 
-# =====================================================
+
 # ENUMS
-# =====================================================
+
 class UserRole(PyEnum):
     USER = 1
     ADMIN = 2
@@ -27,17 +27,17 @@ class InvoiceStatus(PyEnum):
     PAID = "Đã thanh toán"
     UNPAID = "Chưa thanh toán"
 
-# =====================================================
+
 # BASE MODEL
-# =====================================================
+
 class BaseModel(db.Model):
     __abstract__ = True
     id = Column(Integer, primary_key=True, autoincrement=True)
     active = Column(Boolean, default=True)
 
-# =====================================================
+
 # USER MODEL
-# =====================================================
+
 class User(BaseModel, UserMixin):
     __tablename__ = "user"
 
@@ -51,9 +51,9 @@ class User(BaseModel, UserMixin):
     def __str__(self):
         return f"<User {self.username}>"
 
-# =====================================================
+
 # APARTMENT TYPE
-# =====================================================
+
 class ApartmentType(BaseModel):
     __tablename__ = "apartment_type"
 
@@ -67,9 +67,9 @@ class ApartmentType(BaseModel):
     def __str__(self):
         return self.tenLoai
 
-# =====================================================
+
 # APARTMENT
-# =====================================================
+
 class Apartment(BaseModel):
     __tablename__ = "apartment"
 
@@ -90,9 +90,9 @@ class Apartment(BaseModel):
     def __str__(self):
         return self.title
 
-# =====================================================
+
 # CONTRACT
-# =====================================================
+
 class Contract(BaseModel):
     __tablename__ = "contract"
 
@@ -151,9 +151,9 @@ class Invoice(BaseModel):
     def __str__(self):
         return self.maHoaDon
 
-# =====================================================
+
 # INVOICE DETAIL
-# =====================================================
+
 class InvoiceDetail(BaseModel):
     maCTHD = Column(String(50), unique=True, nullable=False)
     maHoaDon_id = Column(Integer, ForeignKey(Invoice.id), nullable=False)
@@ -191,10 +191,21 @@ class Regulation(BaseModel):
     def __str__(self):
         return self.tenQuyDinh
 
+class ContactMessage(BaseModel):
+        __tablename__ = 'contact_messages'
 
-# =====================================================
+        name = Column(String(100), nullable=False)
+        email = Column(String(100), nullable=False)
+        subject = Column(String(150), nullable=False)
+        message = Column(Text, nullable=False)
+        created_at = Column(DateTime, default=datetime.utcnow)
+
+        def __repr__(self):
+            return f"<ContactMessage(name='{self.name}', email='{self.email}', subject='{self.subject}')>"
+
+
 # FUNCTION: LOAD CONTRACTS FROM JSON
-# =====================================================
+
 def load_contracts_from_json(file_path="templates/Data/hopDongThue.json"):
     with open(file_path, encoding="utf-8") as f:
         contracts = json.load(f)
@@ -243,9 +254,8 @@ def load_regulations_from_json(file_path="templates/Data/quyDinh.json"):
     db.session.commit()
 
 
-# =====================================================
 # FUNCTION: LOAD INVOICES FROM JSON
-# =====================================================
+
 
 def load_invoices_from_json(file_path="templates/Data/hoaDon.json"):
     with open(file_path, encoding="utf-8") as f:

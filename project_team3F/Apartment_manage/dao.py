@@ -2,6 +2,8 @@ import hashlib
 import json
 import os
 from datetime import datetime, timedelta, date
+
+from mediapipe.calculators import image
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 import cloudinary.uploader
@@ -153,7 +155,7 @@ def save_image(file):
     return f"/static/uploads/apartments/{filename}"
 
 def add_apartment(data, image_file):
-    image_url = save_image(image_file) if image_file else None
+    image_url = upload_image(image)
 
     ap = Apartment(
         title=data["title"],
@@ -663,3 +665,11 @@ def load_type(q=None, type_id=None, page=None):
         query = query.slice(start, start+size)
 
     return query.all()
+
+def upload_image(file, folder="apartments"):
+    result = cloudinary.uploader.upload(
+        file,
+        folder=folder,
+        resource_type="image"
+    )
+    return result["secure_url"]

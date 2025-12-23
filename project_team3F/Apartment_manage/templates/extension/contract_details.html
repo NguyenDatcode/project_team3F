@@ -1,10 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'layout/base.html' %}
+{% block content %}
 
-</body>
-</html>
+<div class="container my-4">
+
+  <h2 class="mb-4 text-primary">
+    <i class="bi bi-file-earmark-text"></i> Chi tiết hợp đồng thuê
+  </h2>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+
+      <!-- Mã hợp đồng & Tên người thuê -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label fw-bold">Mã hợp đồng</label>
+          <input type="text" class="form-control" value="{{ contract.maHopDong }}" readonly>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-bold">Tên người thuê</label>
+          <input type="text" class="form-control" value="{{ contract.tenant_name }}" readonly>
+        </div>
+      </div>
+
+      <!-- Căn hộ & Trạng thái -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label fw-bold">Căn hộ</label>
+          <input type="text" class="form-control"
+                 value="{{ contract.apartment.title if contract.apartment else '' }}"
+                 readonly>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-bold">Trạng thái</label>
+          <input type="text" class="form-control"
+                 value="{{ contract.trangThai.value }}"
+                 readonly>
+        </div>
+      </div>
+
+      <!-- Giá thuê, tiền cọc, thời hạn -->
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label class="form-label fw-bold">Giá thuê (VNĐ)</label>
+          <input type="text" class="form-control"
+                 value="{{ '{:,.0f}'.format(contract.giaThue) }}"
+                 readonly>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label fw-bold">Tiền cọc (VNĐ)</label>
+          <input type="text" class="form-control"
+                 value="{{ '{:,.0f}'.format(contract.tienCoc) }}"
+                 readonly>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label fw-bold">Thời hạn (tháng)</label>
+          <input type="text" class="form-control"
+                 value="{{ contract.thoiHan or 6 }}"
+                 readonly>
+        </div>
+      </div>
+
+      <!-- Ngày bắt đầu & Ngày hết hiệu lực -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label fw-bold">Ngày bắt đầu</label>
+          <input type="text" class="form-control"
+                 value="{{ contract.ngayBatDau.strftime('%d/%m/%Y') }}"
+                 readonly>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-bold">Ngày hết hiệu lực</label>
+          <input type="text" class="form-control"
+                 value="{{ end_date.strftime('%d/%m/%Y') }}"
+                 readonly>
+        </div>
+      </div>
+
+      <!-- Còn bao nhiêu ngày -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <span class="badge {% if (end_date - now).days <= 30 %}bg-danger{% else %}bg-success{% endif %}">
+            Còn {{ (end_date - now).days }} ngày
+          </span>
+        </div>
+      </div>
+
+      <!-- Nút quay lại -->
+      <div class="d-flex justify-content-start">
+        <a href="{{ url_for('search_contract') }}" class="btn btn-secondary">
+          <i class="bi bi-arrow-left"></i> Quay lại
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

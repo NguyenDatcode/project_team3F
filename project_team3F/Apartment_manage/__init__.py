@@ -48,10 +48,9 @@ def create_app():
     login.login_view = "login_process"
 
     cloudinary.config(
-        cloud_name='dxxwcby8l',
-        api_key='792844686918347',
-        api_secret='T8ys_Z9zaKSqmKWa4K1RY6DXUJg'
+        cloud_name="dlvwfou7y",
+        api_key="539475968685867",
+        api_secret="fxQr19ONES9YnIRQmI0FdC0wD5c"
     )
-
     return app
 

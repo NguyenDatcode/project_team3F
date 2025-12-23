@@ -11,7 +11,7 @@ from Apartment_manage import dao, login, create_app, db
 from Apartment_manage.dao import add_user
 from Apartment_manage.models import User, UserRole, Contract, Invoice, Regulation, Apartment, ContractStatus, \
     ApartmentType
-
+from decorators import anonymous_required
 # from Apartment_manage.admin import admin_bp
 
 
@@ -123,6 +123,7 @@ def register_process():
 
 
 @app.route("/login", methods=["GET", "POST"])
+@anonymous_required
 def login_process():
     if request.method == "POST":
         username = request.form["username"]
@@ -187,11 +188,21 @@ def search_contract():
         contracts = query.all()
 
     return render_template("extension/deal_extension.html", contracts=contracts)
+
 @app.route("/extension/contract/<int:contract_id>")
 def view_contract(contract_id):
     contract = Contract.query.get_or_404(contract_id)
-    return render_template("extension/contract_detail.html", contract=contract)
 
+    # Nếu contract.thoiHan không có thì mặc định 6 tháng
+    thoi_han = contract.thoiHan or 6
+    end_date = contract.ngayBatDau + timedelta(days=thoi_han*30)
+
+    return render_template(
+        "extension/contract_details.html",
+        contract=contract,
+        end_date=end_date,
+        now=datetime.now()
+    )
 @app.route("/admin-dashboard")
 def ad_dashboard():
     return render_template("admin-dashboard.html")
@@ -215,7 +226,26 @@ def admin_apartments():
     types = dao.get_all_apartment_types()
     return render_template("admin/apartment.html", types=types)
 
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        subject = request.form.get('subject')
+        message = request.form.get('message')
 
+        new_message = ContactMessage(
+            name=name,
+            email=email,
+            subject=subject,
+            message=message
+        )
+        db.session.add(new_message)
+        db.session.commit()
+
+        flash('Tin nhắn của bạn đã được gửi thành công!', 'success')
+        return redirect('/contact')  # Quay lại trang contact
+    return render_template('contact.html')
 # ================= ADMIN APARTMENT API =================
 @admin_bp.route("/api/apartments")
 @login_required

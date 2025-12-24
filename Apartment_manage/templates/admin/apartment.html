@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="fw-bold mb-3">Quản lý căn hộ</h4>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Mã căn</th>
+                    <th>Tiêu đề</th>
+                    <th>Giá</th>
+                    <th>Loại</th>
+                    <th>Trạng thái</th>
+                    <th>Hình ảnh</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="tblApartments"></tbody>
+        </table>
+
+        <button class="btn btn-primary mb-3" onclick="openAddModal()">
+            + Thêm căn hộ
+        </button>
+    </div>
+</div>
+
+{% include 'admin/apartment_modal.html' %}
+<script src="{{ url_for('static', filename='js/admin_apartment.js') }}"></script>
+

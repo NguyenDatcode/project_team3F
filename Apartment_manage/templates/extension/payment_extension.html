@@ -1,0 +1,81 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+
+<div class="container my-4">
+
+  <h2 class="mb-4 text-primary">
+    <i class="bi bi-search"></i> Tìm kiếm hóa đơn
+  </h2>
+
+  <!-- Form tìm kiếm -->
+  <form class="mb-4" action="{{ url_for('search_invoice') }}" method="get">
+    <div class="row g-3 align-items-end">
+
+      <div class="col-md-4">
+        <label class="form-label">Số hóa đơn</label>
+        <input type="text" name="maHoaDon" class="form-control" placeholder="Nhập số hóa đơn">
+      </div>
+
+      <div class="col-md-4">
+        <button type="submit" class="btn btn-primary w-100">
+          <i class="bi bi-search"></i> Tìm kiếm
+        </button>
+      </div>
+
+    </div>
+  </form>
+
+  <!-- Kết quả -->
+  {% if invoices %}
+  <table class="table table-hover align-middle">
+    <thead class="table-primary">
+      <tr>
+        <th>Số hóa đơn</th>
+        <th>Tên người thuê</th>
+        <th>Ngày lập</th>
+        <th>Số tiền</th>
+        <th>Trạng thái</th>
+        <th>Thanh toán</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for invoice in invoices %}
+      <tr>
+        <td>{{ invoice.maHoaDon }}</td>
+        <td>{{ invoice.maHopDong.tenant_name }}</td>
+        <td>{{ invoice.ngayTaoHoaDon.strftime('%d/%m/%Y') }}</td>
+        <td>{{ "{:,.0f}".format(invoice.tongCong) }} đ</td>
+
+        <td>
+          {% if invoice.status.value == 'CHUA_THANH_TOAN' %}
+            <span class="badge bg-warning text-dark">Chưa thanh toán</span>
+          {% else %}
+            <span class="badge bg-success">Đã thanh toán</span>
+          {% endif %}
+        </td>
+
+        <td>
+          {% if invoice.status.value == 'CHUA_THANH_TOAN' %}
+            <a href="{{ url_for('pay_invoice', maHoaDon=invoice.maHoaDon) }}"
+               class="btn btn-sm btn-success">
+              <i class="bi bi-credit-card"></i> Thanh toán
+            </a>
+          {% else %}
+            <button class="btn btn-sm btn-secondary" disabled>
+              Đã thanh toán
+            </button>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <div class="alert alert-warning">
+      Không tìm thấy hóa đơn nào!
+    </div>
+  {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+[
+  {
+    "maHoaDon": "HD202507-A1",
+    "maHopDong": "A1",
+    "regulation": "QD_2025_01",
+    "thang": 7,
+    "nam": 2025,
+
+    "tienPhong": 20000000,
+    "tienDien": 350000,
+    "tienNuoc": 120000,
+    "phuPhiKhac": 50000,
+
+    "tongCong": 20520000,
+    "ngayTaoHoaDon": "2025-07-01",
+    "status": "UNPAID"
+  },
+  {
+    "maHoaDon": "HD202507-A2",
+    "maHopDong": "A2",
+    "regulation": "QD_2025_01",
+    "thang": 7,
+    "nam": 2025,
+
+    "tienPhong": 24000000,
+    "tienDien": 410000,
+    "tienNuoc": 150000,
+    "phuPhiKhac": 100000,
+
+    "tongCong": 24660000,
+    "ngayTaoHoaDon": "2025-07-02",
+    "status": "PAID"
+  },
+  {
+    "maHoaDon": "HD202608-A3",
+    "maHopDong": "A3",
+    "regulation": "QD_2024_01",
+    "thang": 8,
+    "nam": 2026,
+
+    "tienPhong": 19000000,
+    "tienDien": 330000,
+    "tienNuoc": 219000,
+    "phuPhiKhac": 70000,
+
+    "tongCong": 19519000,
+    "ngayTaoHoaDon": "2026-08-03",
+    "status": "UNPAID"
+  }
+]

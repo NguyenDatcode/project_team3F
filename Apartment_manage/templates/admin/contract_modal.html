@@ -1,0 +1,54 @@
+<div class="modal fade" id="contractModal">
+  <div class="modal-dialog modal-lg">
+    <form id="contractForm">
+      <input type="hidden" id="contractId">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="contractModalTitle"></h5>
+        </div>
+
+        <div class="modal-body">
+          <input class="form-control mb-2" id="maHopDong" name="maHopDong"
+                 placeholder="Mã hợp đồng" required>
+
+          <input class="form-control mb-2" name="tenant_name"
+                 placeholder="Tên người thuê" required>
+
+          <div class="row">
+            <div class="col">
+              <input class="form-control mb-2" name="giaThue"
+                     type="number" placeholder="Giá thuê" required>
+            </div>
+            <div class="col">
+              <input class="form-control mb-2" name="tienCoc"
+                     type="number" placeholder="Tiền cọc">
+            </div>
+          </div>
+
+          <input class="form-control mb-2" name="thoiHan"
+                 type="number" placeholder="Thời hạn (tháng)">
+
+          <input class="form-control mb-2" name="ngayBatDau"
+                 type="date" required>
+
+          <select class="form-control mb-2" name="apartment_id">
+            {% for a in apartments %}
+            <option value="{{ a.id }}">{{ a.title }}</option>
+            {% endfor %}
+          </select>
+
+          <select class="form-control" name="trangThai">
+            <option value="Còn hiệu lực">Còn hiệu lực</option>
+            <option value="Hết hiệu lực">Hết hiệu lực</option>
+            <option value="Chấm dứt">Chấm dứt</option>
+          </select>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-success">Lưu</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

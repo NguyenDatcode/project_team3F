@@ -1,4 +1,3 @@
-
 let accountModal = null;
 let accountDetailModal = null;
 

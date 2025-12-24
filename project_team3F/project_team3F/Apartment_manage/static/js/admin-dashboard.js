@@ -1,11 +1,8 @@
-// static/js/admin_dashboard.js
 $(function() {
-    // khi click menu (menu-load)
     $(document).on('click', '.menu-load', function(e) {
         e.preventDefault();
         const target = $(this).data('target');
 
-        // highlight
         $('.menu-load').removeClass('menu-active');
         $(this).addClass('menu-active');
 

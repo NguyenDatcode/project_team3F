@@ -1,4 +1,3 @@
-
 let contractModal = null;
 
 function initContractPage() {
@@ -8,8 +7,6 @@ function initContractPage() {
     document.getElementById("contractForm").onsubmit = submitContract;
     loadContracts();
 }
-
-/* ================= LOAD ================= */
 
 function loadContracts() {
     fetch("/admin/api/contracts")

@@ -425,10 +425,21 @@ def admin_invoice_detail(id):
     return render_template("admin/invoice_detail_modal.html")
 
 
+# @admin_bp.route("/api/invoices")
+# @login_required
+# def api_get_invoices():
+#     return jsonify(dao.get_all_invoices())
+
 @admin_bp.route("/api/invoices")
 @login_required
 def api_get_invoices():
-    return jsonify(dao.get_all_invoices())
+    month = request.args.get("month", type=int)
+    year = request.args.get("year", type=int)
+    status = request.args.get("status")
+
+    return jsonify(
+        dao.get_all_invoices(month, year, status)
+    )
 
 
 @admin_bp.route("/api/invoices/<int:id>")

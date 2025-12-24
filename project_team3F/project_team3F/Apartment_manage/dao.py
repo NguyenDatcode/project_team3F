@@ -264,7 +264,6 @@ def delete_service(service_id):
 
 
         #======= CONTRACT ==========
-
 def get_all_contracts():
     contracts = Contract.query \
         .options(joinedload(Contract.apartment)) \
@@ -345,7 +344,9 @@ def get_contract_by_id(contract_id):
         "apartment_id": c.apartment_id
     }
 
+
 def update_contract(contract_id, data):
+    contract = Contract.query.get_or_404(contract_id)
     contract = Contract.query.get_or_404(contract_id)
 
     contract.tenant_name = data.get("tenant_name", contract.tenant_name)
@@ -354,7 +355,12 @@ def update_contract(contract_id, data):
     contract.tienCoc = float(data.get("tienCoc", contract.tienCoc))
 
     if data.get("trangThai"):
-        contract.trangThai = ContractStatus[data.get("trangThai")]
+        # Lấy enum theo giá trị
+        value = data.get("trangThai")
+        try:
+            contract.trangThai = next(s for s in ContractStatus if s.value == value)
+        except StopIteration:
+            raise ValueError(f"Trạng thái hợp đồng không hợp lệ: {value}")
 
     if data.get("apartment_id"):
         contract.apartment_id = int(data.get("apartment_id"))
@@ -365,7 +371,7 @@ def update_contract(contract_id, data):
         )
 
     db.session.commit()
-
+    db.session.commit()
 
 def delete_contract(contract_id):
     contract = Contract.query.get(contract_id)
@@ -429,16 +435,6 @@ def delete_regulation(rid):
         db.session.delete(r)
         db.session.commit()
 
-
-# def get_active_regulation(at_date=None):
-#     if not at_date:
-#         at_date = date.today()
-#
-#     return Regulation.query.filter(
-#         Regulation.ngayBatDau <= at_date,
-#         (Regulation.ngayKetThuc is None) | (Regulation.ngayKetThuc >= at_date)
-#     ).order_by(Regulation.ngayBatDau.desc()).first()
-
 def get_active_regulation(at_date=None):
     if not at_date:
         at_date = date.today()
@@ -452,22 +448,33 @@ def get_active_regulation(at_date=None):
     ).order_by(Regulation.ngayBatDau.desc()).first()
 
         #======INVOICES======
-
-def get_all_invoices():
-    invoices = Invoice.query.options(
+def get_all_invoices(month=None, year=None, status=None):
+    query = Invoice.query.options(
         joinedload(Invoice.maHopDong)
-    ).order_by(Invoice.ngayTaoHoaDon.desc()).all()
+    )
+
+    if month:
+        query = query.filter(Invoice.thang == month)
+
+    if year:
+        query = query.filter(Invoice.nam == year)
+
+    if status:
+        query = query.filter(Invoice.status == InvoiceStatus[status])
+
+    invoices = query.order_by(Invoice.ngayTaoHoaDon.desc()).all()
 
     return [{
         "id": i.id,
         "maHoaDon": i.maHoaDon,
-        "maHopDong": i.maHopDong.maHopDong,
+        "hopDong": i.maHopDong.maHopDong,
         "thang": i.thang,
         "nam": i.nam,
         "tongCong": i.tongCong,
         "status": i.status.value,
         "ngayTaoHoaDon": i.ngayTaoHoaDon.strftime("%d/%m/%Y")
     } for i in invoices]
+
 
 def get_invoice_detail(invoice_id):
     invoice = Invoice.query.options(

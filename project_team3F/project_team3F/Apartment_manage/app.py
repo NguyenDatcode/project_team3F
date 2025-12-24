@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request
 import json, os
 
+# from Apartment_manage.index import admin_bp
+
 app = Flask(__name__)
 
-
+# app.register_blueprint(admin_bp)
 # Load JSON
 def load_apartments():
     json_path = os.path.join("Data", "apartment.json")

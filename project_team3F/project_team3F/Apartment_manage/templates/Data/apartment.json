@@ -11,7 +11,7 @@
     "location": "Block A – Tầng 2",
     "is_vip": false,
     "type_id": 1,
-    "image_url": "https://img.freepik.com/free-photo/studio-1.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Phù hợp người đi làm, đầy đủ nội thất."
   },
   {
@@ -26,7 +26,7 @@
     "location": "Block A – Tầng 3",
     "is_vip": false,
     "type_id": 2,
-    "image_url": "https://img.freepik.com/free-photo/apartment-2.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Ban công rộng, ánh sáng tự nhiên."
   },
   {
@@ -41,7 +41,7 @@
     "location": "Block A – Tầng 4",
     "is_vip": false,
     "type_id": 3,
-    "image_url": "https://img.freepik.com/free-photo/apartment-3.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Phòng rộng rãi, bếp tách biệt."
   },
   {
@@ -56,7 +56,7 @@
     "location": "Block A – Tầng 5",
     "is_vip": false,
     "type_id": 4,
-    "image_url": "https://img.freepik.com/free-photo/apartment-4.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Phù hợp gia đình nhỏ."
   },
   {
@@ -71,7 +71,7 @@
     "location": "Block A – Tầng 6",
     "is_vip": true,
     "type_id": 5,
-    "image_url": "https://img.freepik.com/free-photo/studio-vip.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "View thoáng, nội thất cao cấp."
   },
   {
@@ -86,7 +86,7 @@
     "location": "Block B – Tầng 2",
     "is_vip": true,
     "type_id": 6,
-    "image_url": "https://img.freepik.com/free-photo/luxury-apt-1.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Phong cách sang trọng, thiết kế hiện đại."
   },
   {
@@ -101,7 +101,7 @@
     "location": "Block B – Tầng 3",
     "is_vip": false,
     "type_id": 7,
-    "image_url": "https://img.freepik.com/free-photo/apt-7.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Rộng rãi, nội thất cao cấp."
   },
   {
@@ -116,7 +116,7 @@
     "location": "Block B – Tầng 4",
     "is_vip": false,
     "type_id": 8,
-    "image_url": "https://img.freepik.com/free-photo/apartment-wood.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Tone gỗ ấm, thích hợp cặp đôi."
   },
   {
@@ -131,7 +131,7 @@
     "location": "Block B – Tầng 5",
     "is_vip": false,
     "type_id": 9,
-    "image_url": "https://img.freepik.com/free-photo/apartment-corner.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "View góc, không gian rộng."
   },
   {
@@ -146,7 +146,7 @@
     "location": "Block B – Tầng 1",
     "is_vip": false,
     "type_id": 10,
-    "image_url": "https://img.freepik.com/free-photo/simple-studio.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Giá tốt, phù hợp sinh viên."
   },
   {
@@ -161,7 +161,7 @@
     "location": "Block C – Tầng 6",
     "is_vip": true,
     "type_id": 11,
-    "image_url": "https://img.freepik.com/free-photo/luxury-apt-2.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Căn hộ VIP rộng, sang trọng."
   },
   {
@@ -176,7 +176,7 @@
     "location": "Block C – Tầng 2",
     "is_vip": false,
     "type_id": 12,
-    "image_url": "https://img.freepik.com/free-photo/young-style-apt.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Thiết kế trẻ trung, màu sắc tươi sáng."
   },
   {
@@ -191,7 +191,7 @@
     "location": "Block C – Tầng 3",
     "is_vip": false,
     "type_id": 13,
-    "image_url": "https://img.freepik.com/free-photo/minimal-studio.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Nội thất tối giản, dễ vệ sinh."
   },
   {
@@ -206,7 +206,7 @@
     "location": "Block C – Tầng 4",
     "is_vip": false,
     "type_id": 14,
-    "image_url": "https://img.freepik.com/free-photo/big-balcony.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Ban công lớn, ánh sáng tốt."
   },
   {
@@ -221,7 +221,7 @@
     "location": "Block C – Tầng 5",
     "is_vip": false,
     "type_id": 15,
-    "image_url": "https://img.freepik.com/free-photo/family-apt.jpg",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvOrUW7QkJBQrPvJY_oTivjqONBxSJkVGLxA&s",
     "description_short": "Phù hợp gia đình 3 người."
   }
 ]

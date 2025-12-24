@@ -1,6 +1,62 @@
-{
-  "giaDien": 3500,
-  "giaNuoc": 18000,
-  "phiDichVu": 200000,
-  "soNguoiToiDa": 2
-}
+[
+  {
+    "maQuyDinh": "QD_2024_01",
+    "tenQuyDinh": "Quy định áp dụng năm 2024",
+    "giaDien": 3500,
+    "giaNuoc": 18000,
+    "phiDichVu": 200000,
+    "soNguoiToiDa": 2,
+    "phiTreHan": 50000,
+    "ngayBatDau": "2024-01-01",
+    "ngayKetThuc": "2024-12-31",
+    "ghiChu": "Áp dụng cho toàn bộ căn hộ trong năm 2024"
+  },
+  {
+    "maQuyDinh": "QD_2024_VIP",
+    "tenQuyDinh": "Quy định ưu đãi căn hộ VIP",
+    "giaDien": 3200,
+    "giaNuoc": 17000,
+    "phiDichVu": 300000,
+    "soNguoiToiDa": 3,
+    "phiTreHan": 30000,
+    "ngayBatDau": "2024-06-01",
+    "ngayKetThuc": null,
+    "ghiChu": "Áp dụng cho căn hộ VIP, giảm giá điện nước"
+  },
+  {
+    "maQuyDinh": "QD_2023_01",
+    "tenQuyDinh": "Quy định căn hộ thường",
+    "giaDien": 3600,
+    "giaNuoc": 18500,
+    "phiDichVu": 180000,
+    "soNguoiToiDa": 2,
+    "phiTreHan": 40000,
+    "ngayBatDau": "2023-01-01",
+    "ngayKetThuc": null,
+    "ghiChu": "Quy định mặc định cho căn hộ thường"
+  },
+  {
+    "maQuyDinh": "QD_2025_01",
+    "tenQuyDinh": "Quy định tăng giá điện 2025",
+    "giaDien": 4200,
+    "giaNuoc": 19000,
+    "phiDichVu": 220000,
+    "soNguoiToiDa": 2,
+    "phiTreHan": 60000,
+    "ngayBatDau": "2025-01-01",
+    "ngayKetThuc": null,
+    "ghiChu": "Điều chỉnh theo chính sách giá điện mới năm 2025"
+  },
+  {
+    "maQuyDinh": "QD_2024_03",
+    "tenQuyDinh": "Quy định sinh viên thuê ghép",
+    "giaDien": 3000,
+    "giaNuoc": 16000,
+    "phiDichVu": 100000,
+    "soNguoiToiDa": 4,
+    "phiTreHan": 20000,
+    "ngayBatDau": "2024-03-01",
+    "ngayKetThuc": null,
+    "ghiChu": "Áp dụng cho căn hộ sinh viên thuê theo nhóm"
+  }
+]

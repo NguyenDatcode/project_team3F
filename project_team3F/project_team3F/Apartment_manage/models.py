@@ -12,7 +12,6 @@ from Apartment_manage import db, create_app
 app = create_app()
 
 
-# ENUMS
 
 class UserRole(PyEnum):
     USER = 1
@@ -28,7 +27,6 @@ class InvoiceStatus(PyEnum):
     UNPAID = "Chưa thanh toán"
 
 
-# BASE MODEL
 
 class BaseModel(db.Model):
     __abstract__ = True
@@ -36,7 +34,6 @@ class BaseModel(db.Model):
     active = Column(Boolean, default=True)
 
 
-# USER MODEL
 
 class User(BaseModel, UserMixin):
     __tablename__ = "user"
@@ -52,7 +49,6 @@ class User(BaseModel, UserMixin):
         return f"<User {self.username}>"
 
 
-# APARTMENT TYPE
 
 class ApartmentType(BaseModel):
     __tablename__ = "apartment_type"
@@ -67,8 +63,6 @@ class ApartmentType(BaseModel):
     def __str__(self):
         return self.tenLoai
 
-
-# APARTMENT
 
 class Apartment(BaseModel):
     __tablename__ = "apartment"
@@ -90,8 +84,6 @@ class Apartment(BaseModel):
     def __str__(self):
         return self.title
 
-
-# CONTRACT
 
 class Contract(BaseModel):
     __tablename__ = "contract"
@@ -152,7 +144,6 @@ class Invoice(BaseModel):
         return self.maHoaDon
 
 
-# INVOICE DETAIL
 
 class InvoiceDetail(BaseModel):
     maCTHD = Column(String(50), unique=True, nullable=False)
@@ -204,7 +195,6 @@ class ContactMessage(BaseModel):
             return f"<ContactMessage(name='{self.name}', email='{self.email}', subject='{self.subject}')>"
 
 
-# FUNCTION: LOAD CONTRACTS FROM JSON
 
 def load_contracts_from_json(file_path="templates/Data/hopDongThue.json"):
     with open(file_path, encoding="utf-8") as f:
@@ -254,9 +244,6 @@ def load_regulations_from_json(file_path="templates/Data/quyDinh.json"):
     db.session.commit()
 
 
-# FUNCTION: LOAD INVOICES FROM JSON
-
-
 def load_invoices_from_json(file_path="templates/Data/hoaDon.json"):
     with open(file_path, encoding="utf-8") as f:
         invoices = json.load(f)
@@ -304,9 +291,6 @@ def load_invoices_from_json(file_path="templates/Data/hoaDon.json"):
     db.session.commit()
 
 
-# =====================================================
-# MAIN: CREATE TABLES + LOAD SAMPLE DATA
-# =====================================================
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()

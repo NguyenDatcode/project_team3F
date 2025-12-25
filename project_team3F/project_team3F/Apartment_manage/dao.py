@@ -2,6 +2,7 @@ import hashlib
 import json
 import os
 from datetime import datetime, timedelta, date
+from email.mime import image
 from operator import or_
 
 # from mediapipe.calculators import image
@@ -144,19 +145,11 @@ def get_all_apartments_with_type():
         "description_short": a.description_short
     } for a in apartments]
 
-def save_image(file):
-    if not file:
-        return None
-
-    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-    filename = secure_filename(file.filename)
-    path = os.path.join(UPLOAD_FOLDER, filename)
-    file.save(path)
-
-    return f"/static/uploads/apartments/{filename}"
-
 def add_apartment(data, image_file):
-    image_url = upload_image(image)
+    image_url = None
+
+    if image_file and image_file.filename:
+        image_url = upload_image(image_file)
 
     ap = Apartment(
         title=data["title"],
@@ -172,7 +165,6 @@ def add_apartment(data, image_file):
     db.session.commit()
 
 
-
 def update_apartment(ap_id, data, image_file):
     ap = Apartment.query.get_or_404(ap_id)
 
@@ -182,10 +174,21 @@ def update_apartment(ap_id, data, image_file):
     ap.type_id = int(data["type_id"])
     ap.description_short = data.get("description_short", "")
 
-    if image_file:
-        ap.image_url = save_image(image_file)
+    if image_file and image_file.filename:
+        ap.image_url = upload_image(image_file)
 
     db.session.commit()
+
+def upload_image(file, folder="apartments"):
+    if not file:
+        return None
+
+    result = cloudinary.uploader.upload(
+        file,
+        folder=folder,
+        resource_type="image"
+    )
+    return result.get("secure_url")
 
 
 def delete_apartment(ap_id):
@@ -690,10 +693,3 @@ def load_type(q=None, type_id=None, page=None):
 
     return query.all()
 
-def upload_image(file, folder="apartments"):
-    result = cloudinary.uploader.upload(
-        file,
-        folder=folder,
-        resource_type="image"
-    )
-    return result["secure_url"]
